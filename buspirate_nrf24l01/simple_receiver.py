@@ -4,9 +4,9 @@ from nrf24l01 import *
 
 rf = NRF24L01();
 
-#rf.writeReg(SETUP_RETR,[0]);
-#rf.writeReg(EN_AA,[0]);
 rf.writeReg(RX_PW_P0,[1]);
+rf.writeReg(RF_CH,[128]);
+rf.writeReg(RF_SETUP,[38]);
 rf.writeReg(CONFIG,[(1<<PWR_UP) | (1<<PRIM_RX) | (1<<EN_CRC)]);
 time.sleep(0.002);
 rf.ceHigh();
